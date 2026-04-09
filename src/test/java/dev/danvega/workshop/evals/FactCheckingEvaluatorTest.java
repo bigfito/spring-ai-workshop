@@ -34,7 +34,7 @@ public class FactCheckingEvaluatorTest {
 
     @BeforeEach
     void setUp(@Autowired ChatClient.Builder builder) {
-        factCheckingEvaluator = new FactCheckingEvaluator(builder);
+        factCheckingEvaluator = FactCheckingEvaluator.builder(builder).build();
     }
 
     @Test
