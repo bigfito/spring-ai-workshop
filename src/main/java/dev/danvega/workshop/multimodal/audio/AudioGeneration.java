@@ -2,7 +2,6 @@ package dev.danvega.workshop.multimodal.audio;
 
 import org.springframework.ai.openai.OpenAiAudioSpeechModel;
 import org.springframework.ai.openai.OpenAiAudioSpeechOptions;
-import org.springframework.ai.openai.api.OpenAiAudioApi;
 import org.springframework.ai.audio.tts.TextToSpeechPrompt;
 import org.springframework.ai.audio.tts.TextToSpeechResponse;
 import org.springframework.http.HttpHeaders;
@@ -26,8 +25,8 @@ public class AudioGeneration {
 
         var options = OpenAiAudioSpeechOptions.builder()
                 .model("tts-1-hd") // or "tts-1-hd" for higher quality
-                .voice(OpenAiAudioApi.SpeechRequest.Voice.ALLOY) // ALLOY, ECHO, FABLE, ONYX, NOVA, SHIMMER
-                .responseFormat(OpenAiAudioApi.SpeechRequest.AudioResponseFormat.MP3)
+                .voice(OpenAiAudioSpeechOptions.Voice.ALLOY) // ALLOY, ECHO, FABLE, ONYX, NOVA, SHIMMER
+                .responseFormat(OpenAiAudioSpeechOptions.AudioResponseFormat.MP3)
                 .speed(1.0) // 0.25 to 4.0
                 .build();
 

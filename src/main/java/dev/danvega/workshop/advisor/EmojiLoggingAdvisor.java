@@ -10,7 +10,7 @@ import org.springframework.ai.chat.client.advisor.api.CallAdvisorChain;
 import org.springframework.ai.chat.client.advisor.api.StreamAdvisor;
 import org.springframework.ai.chat.client.advisor.api.StreamAdvisorChain;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.model.ModelOptionsUtils;
+import org.springframework.ai.util.json.JsonParser;
 import org.springframework.lang.Nullable;
 import reactor.core.publisher.Flux;
 
@@ -19,7 +19,7 @@ import java.util.function.Function;
 public class EmojiLoggingAdvisor implements CallAdvisor {
 
     public static final Function<ChatClientRequest, String> DEFAULT_REQUEST_TO_STRING = ChatClientRequest::toString;
-    public static final Function<ChatResponse, String> DEFAULT_RESPONSE_TO_STRING = ModelOptionsUtils::toJsonStringPrettyPrinter;
+    public static final Function<ChatResponse, String> DEFAULT_RESPONSE_TO_STRING = JsonParser::toJson;
     private static final Logger logger = LoggerFactory.getLogger(EmojiLoggingAdvisor.class);
     private final Function<ChatClientRequest, String> requestToString;
     private final Function<ChatResponse, String> responseToString;

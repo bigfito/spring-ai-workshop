@@ -13,11 +13,10 @@ public class OptionsController {
 
     public OptionsController(ChatClient.Builder builder) {
 
-        OpenAiChatOptions options = OpenAiChatOptions.builder()
+        OpenAiChatOptions.Builder options = OpenAiChatOptions.builder()
                 .model("gpt-5")
                 .temperature(1.0)
-                .maxCompletionTokens(500)
-                .build();
+                .maxCompletionTokens(500);
 
         this.chatClient = builder
                 .defaultOptions(options)
