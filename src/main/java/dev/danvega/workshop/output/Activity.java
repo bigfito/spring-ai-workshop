@@ -1,4 +1,6 @@
 package dev.danvega.workshop.output;
 
-public record Activity(String activity, String location, String day, String time) {
+import java.time.LocalDate;
+
+public record Activity(String activity, String location, LocalDate day, String time) {
 }

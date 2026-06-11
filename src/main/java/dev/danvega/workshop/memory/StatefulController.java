@@ -26,4 +26,6 @@ public class StatefulController {
                 .content();
     }
 
+    // uses the chat client
+
 }
